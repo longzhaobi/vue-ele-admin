@@ -12,13 +12,14 @@ export default new Router({
   routes: [
   	{
       path: '/login',
-      name: 'Login',
-      component: Login
+      component: Login,
+      hidden: true
     },
     {
       path: '/',
-      name: 'Layout',
-      component: Layout
+      name: '首页',
+      component: Layout,
+      hidden: true
     }
   ]
 })

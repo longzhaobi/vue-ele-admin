@@ -1,7 +1,7 @@
 <template>
-	<el-menu theme="dark">
-		<template v-for="item in permissionRoutes" v-if="!item.hidden">
-			<el-submenu :index="item.name" v-if="!item.noDropdown">
+    <el-menu mode="vertical" theme="dark" :default-active="$route.path">
+        <template v-for="item in permissionRoutes" v-if="!item.hidden">
+            <el-submenu :index="item.name" v-if="!item.noDropdown">
                 <template slot="title">
                     <wscn-icon-svg :icon-class="item.icon||'wenzhang1'"/>
                     {{item.name}}
@@ -21,20 +21,20 @@
                     {{item.children[0].name}}
                 </el-menu-item>
             </router-link>
-		</template>
-	</el-menu>
+        </template>
+    </el-menu>
 </template>
 
 <script>
-	import permissionRoutes from 'store/permission'
-	export default {
-		name: 'Sidebar',
-		data() {
-			return {
-				permissionRoutes: permissionRoutes.get()
-			}
-		}
-	}
+    import permissionRoutes from 'store/permission';
+    export default {
+      name: 'Sidebar',
+      data() {
+        return {
+          permissionRoutes: permissionRoutes.get()
+        }
+      }
+    }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
